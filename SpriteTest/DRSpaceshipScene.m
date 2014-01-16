@@ -26,7 +26,31 @@
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame),
                                      CGRectGetMidY(self.frame)-150);
     [self addChild:spaceship];
+    
+    SKAction *makeRocks = [SKAction sequence: @[
+                                                [SKAction performSelector:@selector(addRock) onTarget:self],
+                                                [SKAction waitForDuration:0.10 withRange:0.15]
+                                                ]];
+    [self runAction: [SKAction repeatActionForever:makeRocks]];
 }
+static inline CGFloat skRandf() {
+    return rand() / (CGFloat) RAND_MAX;
+}
+
+static inline CGFloat skRand(CGFloat low, CGFloat high) {
+    return skRandf() * (high - low) + low;
+}
+
+- (void)addRock
+{
+    SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(8,8)];
+    rock.position = CGPointMake(skRand(0, self.size.width), self.size.height-50);
+    rock.name = @"rock";
+    rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
+    rock.physicsBody.usesPreciseCollisionDetection = YES;
+    [self addChild:rock];
+}
+
 
 - (SKSpriteNode *)newSpaceship
 {
@@ -47,6 +71,9 @@
     light2.position = CGPointMake(28.0, 6.0);
     [hull addChild:light2];
     
+    hull.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hull.size];
+    hull.physicsBody.dynamic = NO;
+    
     return hull;
 }
 
@@ -61,6 +88,14 @@
     [light runAction: blinkForever];
     
     return light;
+}
+
+-(void)didSimulatePhysics
+{
+    [self enumerateChildNodesWithName:@"rock" usingBlock:^(SKNode *node, BOOL *stop) {
+        if (node.position.y < 0)
+            [node removeFromParent];
+    }];
 }
 
 @end
