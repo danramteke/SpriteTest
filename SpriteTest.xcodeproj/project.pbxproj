@@ -25,6 +25,7 @@
 		6EAEECA118887B2F00AF27F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAEEC7918887B2F00AF27F6 /* UIKit.framework */; };
 		6EAEECA918887B2F00AF27F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEECA718887B2F00AF27F6 /* InfoPlist.strings */; };
 		6EAEECAB18887B2F00AF27F6 /* SpriteTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEECAA18887B2F00AF27F6 /* SpriteTestTests.m */; };
+		6EAEECB61888848400AF27F6 /* DRSpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEECB51888848400AF27F6 /* DRSpaceshipScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		6EAEECA618887B2F00AF27F6 /* SpriteTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteTestTests-Info.plist"; sourceTree = "<group>"; };
 		6EAEECA818887B2F00AF27F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EAEECAA18887B2F00AF27F6 /* SpriteTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteTestTests.m; sourceTree = "<group>"; };
+		6EAEECB41888848400AF27F6 /* DRSpaceshipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRSpaceshipScene.h; sourceTree = "<group>"; };
+		6EAEECB51888848400AF27F6 /* DRSpaceshipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRSpaceshipScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				6EAEEC9518887B2F00AF27F6 /* Spaceship.png */,
 				6EAEEC9718887B2F00AF27F6 /* Images.xcassets */,
 				6EAEEC7E18887B2F00AF27F6 /* Supporting Files */,
+				6EAEECB41888848400AF27F6 /* DRSpaceshipScene.h */,
+				6EAEECB51888848400AF27F6 /* DRSpaceshipScene.m */,
 			);
 			path = SpriteTest;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				6EAEEC8818887B2F00AF27F6 /* DRAppDelegate.m in Sources */,
 				6EAEEC9118887B2F00AF27F6 /* DRViewController.m in Sources */,
 				6EAEEC8418887B2F00AF27F6 /* main.m in Sources */,
+				6EAEECB61888848400AF27F6 /* DRSpaceshipScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
